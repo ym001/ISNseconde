@@ -1,0 +1,111 @@
+<!--
+   calculatrice.html
+   
+   Copyright 2014 yves <yves.mercadier@ac-montpellier.fr>
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+   
+   
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Calculatrice décimale</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.22" />
+	<SCRIPT language="javascript">
+	
+	function zero() { 
+		document.formulaire.textValeur.value=document.formulaire.textValeur.value+"0";
+	}
+	function un() { 
+		document.formulaire.textValeur.value=document.formulaire.textValeur.value+"1";
+	}
+	function deux() { 
+			document.formulaire.textValeur.value=document.formulaire.textValeur.value+"2";
+	}
+	function trois() { 
+			document.formulaire.textValeur.value=document.formulaire.textValeur.value+"3";
+	}
+	function quatre() { 
+			document.formulaire.textValeur.value=document.formulaire.textValeur.value+"4";
+	}
+	function cinq() { 
+			document.formulaire.textValeur.value=document.formulaire.textValeur.value+"5";
+	}
+	function six() { 
+			document.formulaire.textValeur.value=document.formulaire.textValeur.value+"6";
+	}
+	function sept() { 
+			document.formulaire.textValeur.value=document.formulaire.textValeur.value+"7";
+	}
+	function huit() { 
+			document.formulaire.textValeur.value=document.formulaire.textValeur.value+"8";
+	}
+	function neuf() { 
+			document.formulaire.textValeur.value=document.formulaire.textValeur.value+"9";
+	}
+	
+
+//Conversion d'une valeur décimale en valeur binaire.
+	function decimalBinaire(x){
+		var resultat = []; // Contient le résultat.
+		while (x){
+			resultat.push(x % 2);
+			x = Math.floor(x / 2);
+		}
+		resultat.reverse(); // On remet dans le bon ordre.
+		var nombre="";
+		for(var i= 0; i <resultat.length; i++){nombre=nombre+resultat[i].toString();}
+		return nombre;			
+		}
+
+//Calcul du résultat en décimal puis affichage.		
+	function conversion(){
+		//On lit la valeur decimale
+		var y=document.formulaire.textValeur.value;
+		//On fait la conversion
+		s=decimalBinaire(y);
+		//On affiche le résultat
+		document.formulaire.textResultat.value=s;
+	}
+	
+</SCRIPT> 
+<link rel="stylesheet" type="text/css" href="calculatrice.css" media="all"/>
+</head>
+<body>
+
+<CENTER>
+<FORM name="formulaire">
+<TABLE >
+	<CAPTION>CONVERTISSEUR DECIMAL BINAIRE</CAPTION>
+	<TR><TD colspan=4><INPUT type="text" name="textValeur" value="" style="width:290px"></TD></TR>
+	<TR><TD>
+		<TABLE >
+		<TR><TD><INPUT  id="gobutton" type="button" name="buttonSept" value="7" onClick="sept()"style="width:70px"></TD><TD><INPUT id="gobutton" type="button" name="buttonHuit" value="8" onClick="huit()"style="width:70px"></TD><TD><INPUT id="gobutton"type="button" name="buttonNeuf" value="9" onClick="neuf()"style="width:70px"></TD></TR>
+		<TR><TD><INPUT id="gobutton" type="button" name="buttonquatre" value="4" onClick="quatre()"style="width:70px"></TD><TD><INPUT id="gobutton" type="button" name="buttonCinq" value="5" onClick="cinq()"style="width:70px"></TD><TD><INPUT id="gobutton" type="button" name="buttonSix" value="6" onClick="six()"style="width:70px"></TD></TR>
+		<TR><TD><INPUT id="gobutton" type="button" name="buttonUn" value="1" onClick="un()"style="width:70px"></TD><TD><INPUT id="gobutton" type="button" name="buttonDeux" value="2" onClick="deux()"style="width:70px"></TD><TD><INPUT id="gobutton" type="button" name="buttonTrois" value="3" onClick="trois()"style="width:70px"></TD></TR>
+
+		<TR><TD><INPUT id="gobutton" type="button" name="buttonZero" value="0" onClick="zero()"style="width:70px"></TD><TD colspan=3><INPUT id="gobutton" type="button" name="textConversion" value="Conversion" onClick="conversion()"style="width:140px"></TD></TR>
+		</TABLE>
+	<TR><TD colspan=4><INPUT type="text" name="textResultat" value="" style="width:290px"></TD></TR>
+</TABLE>
+</FORM>
+</CENTER>
+
+</body>
+</html>
