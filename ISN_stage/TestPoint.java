@@ -1,11 +1,11 @@
 public class TestPoint {
 	TestPoint(Point p){
 		super();
-			p.pourAffichagePoint();
+		System.out.print(p.pourAffichagePoint()+p.pourAffichageCoord());
 	}
 	TestPoint(PointColore p){
-		super();
-			p.pourAffichagePointColore();
+		super();		
+		System.out.print(p.pourAffichagePoint());
 	}
 	
 }

@@ -13,9 +13,11 @@ public class Point {
 		this.y=j;
 		}
 	Point(){super();}
-	public void pourAffichagePoint(){
-		System.out.println("Je suis un point");
-		System.out.println("mes coordonnées sont : "+this.x+" "+this.y+"\n");
+	public String pourAffichagePoint(){
+		return "\nJe suis un point ";
+		}
+	public String pourAffichageCoord(){
+		return "\nmes coordonnées sont : "+this.x+" "+this.y+"\n";
 		}
 	public static void main (String args[]) {
 		System.out.println("\n-->   début du programme \n");
