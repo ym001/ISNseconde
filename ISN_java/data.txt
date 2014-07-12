@@ -1,3 +1,2 @@
-un 
-deux
-trois
+ceci est un texte
+encore et encore
