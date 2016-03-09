@@ -1,0 +1,5 @@
+#commande pour la compilation :
+python -m py_compile "%f"
+
+#commande pour l'execution :
+C:\Python34\python.exe  "%f"
